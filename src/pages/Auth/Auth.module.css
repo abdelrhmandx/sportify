@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+
+body {
+    background-color: #061b28;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.loginPage {
+position: relative;
+    background: url('./sports-background-zzn6qcs2vskdak9z.jpg');
+    height: 100vh;
+    margin: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.topLeftImage {
+    position: absolute;
+ 
+    top: 10px;
+    /* Adjust the top position as needed */
+    left: 10px;
+    /* Adjust the left position as needed */
+    width: 100px;
+    height: 100px;
+    /* Adjust the width as needed */
+   z-index: 1;
+    /* Maintain aspect ratio */
+}
