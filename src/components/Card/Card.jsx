@@ -7,7 +7,6 @@ import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
 
 // parent Card
-
 const Card = (props) => {
   const [expanded, setExpanded] = useState(false);
   return (
@@ -15,7 +14,7 @@ const Card = (props) => {
       {expanded ? (
         <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
       ) : (
-        <CompactCard param={props}  />
+        <CompactCard param={props} />
       )}
     </AnimateSharedLayout>
   );
@@ -26,27 +25,24 @@ function CompactCard({ param }) {
   const Png = param.png;
 
   return (
-    <motion.div
-      className="CompactCard"
-      style={{
-        background: param.color.backGround,
-        boxShadow: param.color.boxShadow,
-        alignItems: 'center'
-      }}
-      layoutId="expandableCard"
-      // onClick={setExpanded}
-    >
-            <div className="detail">
-        <Png style={{fontSize:'50px'}} />
-
-      </div>
-      <div className="radialBar">
-       
-        <span>{param.title}</span>
-      </div>
-
-      
-    </motion.div>
+    <a href={param.path} style={{ textDecoration: 'none' }}>
+      <motion.div
+        className="CompactCard"
+        style={{
+          background: param.color.backGround,
+          boxShadow: param.color.boxShadow,
+          alignItems: 'center'
+        }}
+        layoutId="expandableCard"
+      >
+        <div className="detail">
+          <Png style={{ fontSize: '120px' }} />
+        </div>
+        <div className="radialBar">
+          <span>{param.title}</span>
+        </div>
+      </motion.div>
+    </a>
   );
 }
 
@@ -58,17 +54,14 @@ function ExpandedCard({ param, setExpanded }) {
         type: "area",
         height: "auto",
       },
-
       dropShadow: {
         enabled: false,
-        enabledOnSeries: undefined,
         top: 0,
         left: 0,
         blur: 3,
         color: "#000",
         opacity: 0.35,
       },
-
       fill: {
         colors: ["#fff"],
         type: "gradient",
@@ -115,7 +108,7 @@ function ExpandedCard({ param, setExpanded }) {
       <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
         <UilTimes onClick={setExpanded} />
       </div>
-        <span>{param.title}</span>
+      <span>{param.title}</span>
       <div className="chartContainer">
         <Chart options={data.options} series={param.series} type="area" />
       </div>

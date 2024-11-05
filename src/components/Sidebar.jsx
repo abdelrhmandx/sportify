@@ -48,7 +48,8 @@ const Sidebar = () => {
       <div className="logo">
         <img src={Logo} alt="logo" />
         <span>
-          <span>Sportfiy</span>
+          
+          <span></span>
         </span>
       </div>
 

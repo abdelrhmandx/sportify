@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as Components from "../../components/Auth/Components";
 import styles from "./Auth.module.css";
 import { useNavigate } from "react-router-dom";
-import { initializeApp } from "firebase/app";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -11,19 +11,13 @@ import {
 
 import Logo from "../../imgs/logo2 .png";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAponaog8ahijekPkJJ9FmfUz0A_Y6S2FU",
-  authDomain: "login-ac68d.firebaseapp.com",
-  projectId: "login-ac68d",
-  storageBucket: "login-ac68d.appspot.com",
-  messagingSenderId: "701782126302",
-  appId: "1:701782126302:web:4f7db7a5b0f9aa268cdc4f",
-};
+import { fireApp } from "../../app/config/firebase";
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+
+
 
 export const Auth = () => {
+  const auth = getAuth(fireApp);
   const [signIn, toggle] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -63,13 +57,11 @@ export const Auth = () => {
       );
       const user = userCredential.user;
       setError(false)
-      // console.log("User signed in:", user, userCredential);
+     
       navigate("/dashboard");
-       // Redirect to the dashboard page
+       
     } catch (error) {
-      // console.error("Error signing in:", error);
-      // setError(`Error signing in: ${error.message}`);
-      // console.log(error.code);
+   
       setError("Error Signing in: Wrong Cred");
      
     }
@@ -81,7 +73,7 @@ export const Auth = () => {
       <div className={styles.loginPage}>
         <Components.Container>
           {signIn ? (
-            <Components.SignInContainer signinIn={signIn}>
+            <Components.SignInContainer signinin={signIn}>
               <Components.Form>
                 <Components.Title>Sign In</Components.Title>
                 <Components.Input
@@ -104,7 +96,7 @@ export const Auth = () => {
               </Components.Form>
             </Components.SignInContainer>
           ) : (
-            <Components.SignUpContainer signinIn={signIn}>
+            <Components.SignUpContainer signinin={signIn}>
               <Components.Form>
                 <Components.Title>Create Account</Components.Title>
                 <Components.Input type="text" placeholder="First Name" />
@@ -139,27 +131,27 @@ export const Auth = () => {
             </Components.SignUpContainer>
           )}
 
-          <Components.OverlayContainer signinIn={signIn}>
-            <Components.Overlay signinIn={signIn}>
-              <Components.LeftOverlayPanel signinIn={signIn}>
+          <Components.OverlayContainer signinin={signIn}>
+            <Components.Overlay signinin={signIn}>
+              <Components.LeftOverlayPanel signinin={signIn}>
                 <Components.Title>Welcome Back!</Components.Title>
                 <Components.Paragraph>
-                  <h3>
+                 
                     To keep connected with us please login with your personal
                     info
-                  </h3>
+                  
                 </Components.Paragraph>
                 <Components.GhostButton onClick={() => toggle(true)}>
                   Sign In
                 </Components.GhostButton>
               </Components.LeftOverlayPanel>
 
-              <Components.RightOverlayPanel signinIn={signIn}>
+              <Components.RightOverlayPanel signinin={signIn}>
                 <Components.Title>Hello, Sir!</Components.Title>
                 <Components.Paragraph>
-                  <h3>
+                 
                     Enter Your personal details and start the journey with us
-                  </h3>
+                  
                 </Components.Paragraph>
                 <Components.GhostButton onClick={() => toggle(false)}>
                   Sign Up

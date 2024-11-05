@@ -1,0 +1,151 @@
+
+  
+  .inputBox>input,
+  .inputBox>select,
+  .inputBox>textarea {
+    border: 1px solid #000000;
+    outline: 0;
+    background: white;
+    height: 50px;
+    border-radius: 22px;
+    padding: 5px;
+  }
+  
+  .inputBox>textarea {
+    min-height: 100px;
+  }
+  
+  .container {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        'pickImage'
+        'form';
+    grid-template-rows: 1fr 2fr;
+    gap: 5px;
+padding: 25px;
+
+  }
+  
+  .pickImageBox {
+    grid-area: pickImage;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    border: 0.5px solid #57d86c;
+    cursor: pointer;
+  }
+  
+  .pickImageBoxLabel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    align-self: center;
+    cursor: pointer;
+  }
+  
+  .pickImageBoxInput {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .pickImageBoxH1 {
+    color: #57d86c;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+  .pickImageBoxImage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  
+  .splide {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .splide__list {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .splide_slide {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  
+  .form {
+    grid-area: form;
+    position: relative;
+  }
+  
+  .form  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 15px;
+    gap: 15px;
+    height: 100%;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .inputBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+  
+  .inputBox label {
+    font-size: 1.25rem;
+  }
+  
+  .inputBox input {
+  
+    min-height: 50px;
+    width: 100%;
+    text-indent: 10px;
+  }
+  
+  .actions {
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .actions button {
+    margin-right: 25px;
+    margin-left: 25px;
+    border-radius: 19px;
+    width: 207px;
+    height: 76px;
+    border: 1px solid #000000;
+    background:
+      linear-gradient(90deg, #B7C2BE 52.13%, #77D187 72.84%);
+  
+  }
+  
+  .rightShape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1
+  }

@@ -79,7 +79,7 @@ export const CreateTrainner = () => {
               <input type="text" onChange={handleChange} name="name" />
             </div>
             <div className={classes.inputBox}>
-              <label htmlFor="price">price</label>
+              <label htmlFor="Birth date">Birth date</label>
               <input type="date" onChange={handleChange} name="date" />
             </div>
           </div>

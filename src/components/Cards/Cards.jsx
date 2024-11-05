@@ -1,7 +1,6 @@
 import React from "react";
 import "./Cards.css";
 import { cardsData } from "../../Data/Data";
-
 import Card from "../Card/Card";
 
 const Cards = () => {
@@ -17,6 +16,7 @@ const Cards = () => {
               value={card.value}
               png={card.png}
               series={card.series}
+              path={card.path}
             />
           </div>
         );

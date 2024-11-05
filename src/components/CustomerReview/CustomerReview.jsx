@@ -4,12 +4,7 @@ import Chart from "react-apexcharts";
 
 const CustomerReview = () => {
   const data = {
-    series: [
-      {
-        name: "Review",
-        data: [10, 50, 30, 90, 40, 120, 100],
-      },
-    ],
+    
     options: {
       chart: {
         type: "area",

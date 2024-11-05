@@ -4,7 +4,7 @@ import { UpdatesData } from "../../Data/Data";
 
 const Updates = () => {
   return (
-    <div className="Updates">
+    <div className="">
       {UpdatesData.map((update) => {
         return (
           <div className="update">
