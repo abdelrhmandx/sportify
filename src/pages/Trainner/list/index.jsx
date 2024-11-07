@@ -108,14 +108,24 @@ export const Trainner = () => {
         ...prevState,
         address: data.address,
         age: data.age,
+        certificatesImages: data.certificatesImages,
         experience: data.experience,
-        name: data.name,
-        profileImage: data.profileImage,
         facebook: data.facebook,
         instagram: data.instagram,
-        twitter: data.twitter,
         linkedin: data.linkedin,
+        name: data.name,
+        number: data.number,
+        pdf:data.pdf,
+        profileImage: data.profileImage,
+        sport: data.sport,
         youtube: data.youtube,
+       
+        twitter: data.twitter,
+        
+        
+        
+       
+
 
         
       }));
@@ -141,7 +151,7 @@ export const Trainner = () => {
       const newData = [];
       querySnapshot.forEach((doc) => {
         const data = doc.data();
-        newData.push(createData(data.name, data.address, data.age,data.experience, data.facebook, data.instagram, data.twitter,  data.linkedin, data.youtube, data.status, doc.id, data.certificatesImages, data.idImage, data.profileImage, ));
+        newData.push(createData(data.name, data.address, data.age, data.sport,data.pdf, data.certificatesImages, data.experience, data.number,   data.linkedin, data.youtube, data.instagram, data.twitter, data.facebook, data.status, doc.id, data.certificatesImages, data.idImage, data.profileImage, ));
       });
 
       setRows(newData);
@@ -150,8 +160,8 @@ export const Trainner = () => {
     }
   };
 
-  const createData = (name, address, age, experience, facebook, instagram, twitter,linkedin, youtube,  status, id, certificatesImages, idImage, profileImage, 	) => {
-    return { name, address, age, experience, facebook, instagram, twitter, linkedin, youtube,   status, id, certificatesImages, idImage, profileImage,	 };
+  const createData = (name, address, age, sport, pdf, certificatesImages, experience,number,linkedin, youtube,instagram, twitter, facebook,  status, id,  idImage, profileImage, 	) => {
+    return { name, address, age, sport, pdf, certificatesImages, experience,number, linkedin, youtube,instagram, twitter, facebook,  status, id,  idImage, profileImage,	 };
   };
 
   return (
@@ -179,8 +189,9 @@ export const Trainner = () => {
                 <TableCell>Address</TableCell>
                 <TableCell>Age</TableCell>
                 <TableCell>Experience</TableCell>
+                <TableCell>sport</TableCell>
                 
-                
+                <TableCell>number</TableCell>
                 <TableCell>Status</TableCell>
                 <TableCell>Details</TableCell>
                 <TableCell>Actions</TableCell>
@@ -199,7 +210,8 @@ export const Trainner = () => {
                   <TableCell align="left">{row.address}</TableCell>
                   <TableCell align="left">{row.age}</TableCell>
                   <TableCell align="left">{row.experience}</TableCell>
-                  
+                  <TableCell align="left">{row.sport}</TableCell>
+                  <TableCell align="left">{row.number}</TableCell>
                   
                   
                   <TableCell align="left">
@@ -223,13 +235,15 @@ export const Trainner = () => {
       {selectedTrainer && (
         <div className="DetailsModal">
           <h3>Details for {selectedTrainer.name}</h3>
-          <p>Address: {selectedTrainer.address}</p>
-          <p>Age: {selectedTrainer.age}</p>
-          <p>	Facebook: {selectedTrainer.facebook}</p>
-          <p>	instagram: {selectedTrainer.instagram}</p>
-          <p>	Twitter: {selectedTrainer.twitter}</p>
+          <p>	Sport: {selectedTrainer.sport}</p>
           <p>	linkedin: {selectedTrainer.linkedin}</p>
           <p>	Youtube: {selectedTrainer.youtube}</p>
+          <p>	instagram: {selectedTrainer.instagram}</p>
+          <p>	Twitter: {selectedTrainer.twitter}</p>
+          <p>	Facebook: {selectedTrainer.facebook}</p>
+          <p>	pdf: {selectedTrainer.pdf}</p>
+          
+          <p>	certificatesImages: {selectedTrainer.certificatesImages}</p>
          
 
           <img src={selectedTrainer.profileImage} alt="Profile Image" style={{ maxWidth: '15%', height: 'auto' }} />

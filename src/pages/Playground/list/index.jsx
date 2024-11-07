@@ -45,7 +45,7 @@ const Playground = () => {
           closetime: data.closeTime,
           opentime: data.openTime,
           lockers: data.lockers,
-          stadiumdetails: data.stadiumDetails,
+          stadiumdetails: data.details,
         });
       });
 
